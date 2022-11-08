@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(9, 78, 9);
+  background-color: darkolivegreen;
+  padding: 2rem;
+}
+
+.date-time {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: gray;
+}
+
+nav a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+}
+
+nav a:not(nav a:last-child) {
+  margin-right: 3rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem 0;
+  margin-top: 1rem;
+  background-color: darkslategrey;
+}
+
+.yard {
+  background-color: black;
+}
+
+.due .col footer {
+  justify-content: flex-end !important;
+  background-color: red;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 31%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: black;
+}
+
+.yard .col {
+  background-color: darkslategray;
+}
+
+
+.col:nth-child(2) {
+  background-color: gray;
+}
+
+.col h2 {
+  background-color: white;
+  padding: 0.5rem 1rem;
+}
+
+.yard .col h2 {
+  background-color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: white;
+  margin-top: 1rem;
+}
+
+form:not(form:last-child) {
+  *margin-bottom: 1rem;
+}
+
+form header {
+  display: flex;
+  justify-content: space-between;
+}
+
+form footer {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.material {
+  font-weight: 700;
+}
+
+.customer {
+  font-weight: 500;
+}
+
+.status-icon {
+  margin-right: 1rem;
+  color: darkgreen;
+}
+
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: chocolate;
+  background-color: transparent;
+  border: none;
+}
+
+.icon {
+  font-size: 2rem;
+  color: white;
+  padding: 3px;
+}
+
+.forward {
+  background-color: darkgreen;
+}
+
+.redo {
+  background-color: red;
+}
+
+.ico-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-icon {
+  position: relative;
+  top: 43px;
+  left: 0.5rem;
+  color: white;
+}
+
+.reset-icon {
+  position: relative;
+  top: 43px;
+  right: 0.5rem;
+  color: white;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.search-input {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 0.5rem 1rem 0.5rem 1.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  color: white;
+}
+
+label {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+  color: white;
+}
+
+label input {
+  height: 1rem;
+  width: 1rem;
+}
+
+.admin {
+  flex-direction: column;
+  background-color: transparent;
+
+  table {
+    border-collapse: collapse;
+    margin: 1rem auto 1rem;
+    border: 3px solid black;
+    color: white;
+    width: 100%;
+    max-width: 550px;
+
+    thead {
+      border: 3px solid black;
+
+      tr {
+        border: 3px solid black;
+        color: white;
+      }
+
+      th {
+        *color: black;
+        border: 3px solid black;
+        text-transform: uppercase;
+
+      }
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 0.5rem;
+      *min-width: 10rem;
+    }
+
+    .table-day {
+      border-right: none;
+    }
+
+    .table-date {
+      border-left: none;
+    }
+  }
+
+  table:last-child {
+    margin-bottom: 2rem;
+  }
+}
+
+.due form footer,
+.waiting form footer {
+  justify-content: flex-end;
+}
+
+
+
+@media screen and (max-width: 1060px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .col {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    padding: 1rem;
+  }
+}

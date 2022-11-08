@@ -1,0 +1,158 @@
+[
+  {
+    "scheduled": {
+      "date": "2022-10-29"
+    },
+    "reScheduled": {
+      "date": null,
+      "reason": null
+    },
+    "cancelled": {
+      "date": null,
+      "reason": null
+    },
+    "in": {
+      "nth": null,
+      "date": null,
+      "time": null
+    },
+    "loading": {
+      "start": {
+        "nth": null,
+        "time": null
+      },
+      "finish": {
+        "nth": null,
+        "time": null
+      }
+    },
+    "out": {
+      "nth": null,
+      "time": null
+    },
+    "_id": "635f9aa3204f1ffadb55fe88",
+    "material": "Mixed paper",
+    "customer": "MRL",
+    "refNum": "11",
+    "createdAt": "2022-10-31T09:51:31.152Z",
+    "updatedAt": "2022-10-31T11:03:30.350Z",
+    "__v": 0
+  },
+  {
+    "scheduled": {
+      "date": "2022-10-30"
+    },
+    "reScheduled": {
+      "date": null,
+      "reason": null
+    },
+    "cancelled": {
+      "date": null,
+      "reason": null
+    },
+    "in": {
+      "nth": null,
+      "date": null,
+      "time": null
+    },
+    "loading": {
+      "start": {
+        "nth": null,
+        "time": null
+      },
+      "finish": {
+        "nth": null,
+        "time": null
+      }
+    },
+    "out": {
+      "nth": null,
+      "time": null
+    },
+    "_id": "635f9ad5bfeda0b48918caa9",
+    "material": "Mixed paper",
+    "customer": "WPT",
+    "refNum": "22",
+    "createdAt": "2022-10-31T09:52:21.352Z",
+    "updatedAt": "2022-10-31T09:52:21.352Z",
+    "__v": 0
+  },
+  {
+    "scheduled": {
+      "date": "2022-10-31"
+    },
+    "reScheduled": {
+      "date": null,
+      "reason": null
+    },
+    "cancelled": {
+      "date": null,
+      "reason": null
+    },
+    "in": {
+      "nth": null,
+      "date": null,
+      "time": null
+    },
+    "loading": {
+      "start": {
+        "nth": null,
+        "time": null
+      },
+      "finish": {
+        "nth": null,
+        "time": null
+      }
+    },
+    "out": {
+      "nth": null,
+      "time": null
+    },
+    "_id": "635f9aed7bc827e5a0604549",
+    "material": "OCC",
+    "customer": "Peute",
+    "refNum": "33",
+    "createdAt": "2022-10-31T09:52:45.195Z",
+    "updatedAt": "2022-10-31T09:52:45.195Z",
+    "__v": 0
+  },
+  {
+    "scheduled": {
+      "date": "2022-11-01"
+    },
+    "reScheduled": {
+      "date": null,
+      "reason": null
+    },
+    "cancelled": {
+      "date": null,
+      "reason": null
+    },
+    "in": {
+      "nth": null,
+      "date": null,
+      "time": null
+    },
+    "loading": {
+      "start": {
+        "nth": null,
+        "time": null
+      },
+      "finish": {
+        "nth": null,
+        "time": null
+      }
+    },
+    "out": {
+      "nth": null,
+      "time": null
+    },
+    "_id": "635f9b0d85afc45f880d56f6",
+    "material": "HDPE natural",
+    "customer": "Veolia",
+    "refNum": "44",
+    "createdAt": "2022-10-31T09:53:17.258Z",
+    "updatedAt": "2022-10-31T09:53:17.258Z",
+    "__v": 0
+  }
+]
