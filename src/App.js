@@ -16,11 +16,11 @@ export default function App() {
     }, 1000);
   }
 
-  //clock();
+  clock();
 
   const getData = () => {
-    axios.get("http://localhost:8000/all")
-      //axios.get("https://lorry-tracker.herokuapp.com/all")
+    //axios.get("http://localhost:8000/all")
+    axios.get("https://lorry-tracker.herokuapp.com/all")
       .then(res => {
         //console.log(res.data);
         setCollections([...res.data])
@@ -29,9 +29,9 @@ export default function App() {
   }
 
   useEffect(() => {
-    //setInterval(() => {
-    getData();
-    //}, 1000);
+    setInterval(() => {
+      getData();
+    }, 1000);
   }, [])
 
 
