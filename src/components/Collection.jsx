@@ -14,8 +14,8 @@ export default function Collection(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         let data = { id, action };
-        //fetch('http://localhost:8000/write', {
-        fetch('https://lorry-tracker.herokuapp.com/write', {
+        fetch('http://localhost:8000/write', {
+            //fetch('https://lorry-tracker.herokuapp.com/write', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
