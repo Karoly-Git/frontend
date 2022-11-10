@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { MdLogin as CheckInIcon } from 'react-icons/md'
 import { MdLogout as CheckOutIcon } from 'react-icons/md'
+import { FiCamera as CameraIcon } from 'react-icons/fi'
 import { VscDebugStart as StartIcon } from 'react-icons/vsc'
 import { MdDone as FinishIcon } from 'react-icons/md'
 import { CgRedo as RedoIcon } from 'react-icons/cg'
+import { FaExclamationTriangle as ExclamationIcon } from 'react-icons/fa'
 
 const passwords = ['', '1', '2'];
 
@@ -23,10 +25,12 @@ export default function Collection(props) {
     }
 
     const checkIn = (id) => {
-        let password = prompt('Password?');
+        let password = prompt('Would you like to check in?');
         if (passwords.includes(password)) {
             setId(id);
             setAction('checkIn');
+        } else if (password === null) {
+            alert('No changes made!');
         } else {
             alert('Wrong password!');
             return
@@ -161,6 +165,8 @@ export default function Collection(props) {
                         <RedoIcon className='icon redo' style={{ transform: 'scale(-1, 1)' }} />
                     </button>}
 
+
+
                 {props.fwBtnVis[0] &&
                     <button type='submit forward' onClick={() => {
                         checkIn(props.id);
@@ -170,6 +176,11 @@ export default function Collection(props) {
                 {props.fwBtnVis[1] &&
                     <button onClick={() => startLoading(props.id)}>
                         <StartIcon className='icon forward' />
+                    </button>
+                }
+                {props.fwBtnVis[2] &&
+                    <button onClick={() => finishLoadnig(props.id)}>
+                        <CameraIcon className='icon forward' />
                     </button>}
                 {props.fwBtnVis[2] &&
                     <button onClick={() => finishLoadnig(props.id)}>

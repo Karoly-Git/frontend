@@ -13,7 +13,7 @@ export default function Table(props) {
                     <th>Customer</th>
                     <th>Ref</th>
                     <th>Status</th>
-                    <th>Date</th>
+                    {false && <th>Date</th>}
                 </tr>
             </thead>
         </>

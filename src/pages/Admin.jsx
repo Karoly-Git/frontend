@@ -79,9 +79,10 @@ export default function Admin(props) {
                                                         <td>
                                                             {lorry.out && 'Done'}
                                                         </td>
-                                                        <td>
-                                                            {lorry.out && new Date(lorry.out).toLocaleDateString()}
-                                                        </td>
+                                                        {false &&
+                                                            <td>
+                                                                {lorry.out && new Date(lorry.out).toLocaleDateString()}
+                                                            </td>}
                                                     </tr>
                                                 </tbody>}
                                         </>

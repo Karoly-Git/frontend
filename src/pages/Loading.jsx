@@ -71,7 +71,7 @@ export default function Loading(props) {
                         </>
                     })}
             </div>
-            <div className='completed col'>
+            {!false && <div className='completed col'>
                 <h2>
                     <FinishedIcon /> Finished
                 </h2>
@@ -102,7 +102,7 @@ export default function Loading(props) {
                                 />}
                         </>
                     })}
-            </div>
+            </div>}
         </div>
     )
 }
