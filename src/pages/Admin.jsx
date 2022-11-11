@@ -44,7 +44,7 @@ export default function Admin(props) {
     days.forEach((day, index) => console.log(day, dates[index]))
     return (
         <>
-            {props.isLoading && <h1 style={{ color: 'white' }}>Loading...</h1>}
+            {/*props.isLoading && <h1 style={{ color: 'white' }}>Loading...</h1>*/}
             {!props.isLoading && <div className='admin container'>
                 {days.map((day, dayIndex) => {
                     if (dayIndex === 5 || dayIndex == 6) {

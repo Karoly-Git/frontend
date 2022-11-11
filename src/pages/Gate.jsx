@@ -91,7 +91,7 @@ export default function Gate(props) {
                 </ul>
             </nav>
             <div className='weighbridge container'>
-                {props.isLoading && <h1 style={{ color: 'white' }}>Loading...</h1>}
+                {/*props.isLoading && <h1 style={{ color: 'white' }}>Loading...</h1>*/}
                 {!props.isLoading &&
                     <>
                         {isDue &&

@@ -29,7 +29,7 @@ export default function Yard(props) {
             </nav>
 
             <div className='yard container'>
-                {props.isLoading && <h1 style={{ color: 'white' }}>Loading...</h1>}
+                {/*props.isLoading && <h1 style={{ color: 'white' }}>Loading...</h1>*/}
                 {!props.isLoading &&
                     <>
                         {isWaiting &&

@@ -17,7 +17,7 @@ export default function App() {
     }, 1000);
   }
 
-  //clock();
+  clock();
 
   const getData = () => {
     //axios.get("http://localhost:8000/all")
@@ -36,9 +36,9 @@ export default function App() {
         params: {},
       });
       setCollections([...res.data]);
-      setTimeout(() => {
+      /*setTimeout(() => {
         setLoading(false);
-      }, 200);
+      }, 200);*/
     } catch (error) {
       setLoading(false);
       console.error(error);
@@ -56,10 +56,10 @@ export default function App() {
   }
 
   useEffect(() => {
-    //setInterval(() => {
-    //getData();
-    fetchData();
-    //}, 1000);
+    setInterval(() => {
+      //getData();
+      fetchData();
+    }, 1000);
   }, [])
 
 
