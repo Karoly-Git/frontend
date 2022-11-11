@@ -2,13 +2,14 @@ import './App.css'
 import React, { useEffect, useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import axios from 'axios'
-import Loading from './pages/Loading'
-import CheckInOut from './pages/Check_In_Out'
+import Yard from './pages/Yard'
+import Gate from './pages/Gate'
 import Admin from './pages/Admin'
 
 export default function App() {
   const [collections, setCollections] = useState([]);
   const [time, setTime] = useState(new Date().toLocaleTimeString());
+  const [loading, setLoading] = useState(false);
 
   const clock = () => {
     setInterval(() => {
@@ -16,7 +17,7 @@ export default function App() {
     }, 1000);
   }
 
-  clock();
+  //clock();
 
   const getData = () => {
     //axios.get("http://localhost:8000/all")
@@ -28,10 +29,37 @@ export default function App() {
       .catch((err) => console.log(err))
   }
 
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const res = await axios.get("https://lorry-tracker.herokuapp.com/all", {
+        params: {},
+      });
+      setCollections([...res.data]);
+      setTimeout(() => {
+        setLoading(false);
+      }, 200);
+    } catch (error) {
+      setLoading(false);
+      console.error(error);
+    }
+
+    /*
+    //axios.get("http://localhost:8000/all")
+    axios.get("https://lorry-tracker.herokuapp.com/all")
+      .then(res => {
+        //console.log(res.data);
+        setCollections([...res.data])
+      })
+      .catch((err) => console.log(err))
+      */
+  }
+
   useEffect(() => {
-    setInterval(() => {
-      getData();
-    }, 1000);
+    //setInterval(() => {
+    //getData();
+    fetchData();
+    //}, 1000);
   }, [])
 
 
@@ -48,15 +76,15 @@ export default function App() {
         </div>
         <nav>
           <div>
-            <Link key={'link1'} to={'/'} >WeighBridge</Link>
+            <Link key={'link1'} to={'/'} >Gate</Link>
             <Link key={'link2'} to={'loading'} >Yard</Link>
             <Link key={'link3'} to={'admin'} >Admin</Link>
           </div>
         </nav>
         <Routes>
-          <Route path='/' element={<CheckInOut collections={collections} setCollections={setCollections} />} ></Route>
-          <Route path='loading' element={<Loading collections={collections} setCollections={setCollections} />} ></Route>
-          <Route path='admin' element={<Admin collections={collections} setCollections={setCollections} />} ></Route>
+          <Route path='/' element={<Gate isLoading={loading} collections={collections} setCollections={setCollections} />} ></Route>
+          <Route path='loading' element={<Yard isLoading={loading} collections={collections} setCollections={setCollections} />} ></Route>
+          <Route path='admin' element={<Admin isLoading={loading} collections={collections} setCollections={setCollections} />} ></Route>
           <Route path='*' element={<h1>Page not found</h1>} ></Route>
         </Routes>
       </div>

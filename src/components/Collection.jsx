@@ -25,12 +25,12 @@ export default function Collection(props) {
     }
 
     const checkIn = (id) => {
-        let password = prompt('Would you like to check in?');
+        let password = prompt('Would you like to CHECK IN?');
         if (passwords.includes(password)) {
             setId(id);
             setAction('checkIn');
         } else if (password === null) {
-            alert('No changes made!');
+            return;
         } else {
             alert('Wrong password!');
             return
@@ -49,10 +49,12 @@ export default function Collection(props) {
     }
 
     const startLoading = (id) => {
-        let password = prompt('Password?');
+        let password = prompt('Would you like to START loading?');
         if (passwords.includes(password)) {
             setId(id);
             setAction('startLoading');
+        } else if (password === null) {
+            return;
         } else {
             alert('Wrong password!');
             return
@@ -71,10 +73,12 @@ export default function Collection(props) {
     }
 
     const finishLoadnig = (id) => {
-        let password = prompt('Password?');
+        let password = prompt('Would you like to FINISH loading?');
         if (passwords.includes(password)) {
             setId(id);
             setAction('finishLoadnig');
+        } else if (password === null) {
+            return;
         } else {
             alert('Wrong password!');
             return
@@ -93,10 +97,12 @@ export default function Collection(props) {
     }
 
     const checkOut = (id) => {
-        let password = prompt('Password?');
+        let password = prompt('Would you like to CHECK OUT?');
         if (passwords.includes(password)) {
             setId(id);
             setAction('checkOut');
+        } else if (password === null) {
+            return;
         } else {
             alert('Wrong password!');
             return
@@ -129,67 +135,82 @@ export default function Collection(props) {
                         <div>
                             <CheckInIcon className='status-icon' />
                             {new Date(props.collectionIn).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                        </div>}
+                        </div>
+                    }
                     {props.collectionStart &&
                         <div>
                             <StartIcon className='status-icon' />
                             {new Date(props.collectionStart).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                        </div>}
+                        </div>
+                    }
                     {props.collectionFinish &&
                         <div>
                             <FinishIcon className='status-icon' />
                             {new Date(props.collectionFinish).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                        </div>}
+                        </div>
+                    }
                     {props.collectionOut &&
                         <div>
                             <CheckOutIcon className='status-icon' />
                             {new Date(props.collectionOut).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                        </div>}
+                        </div>
+                    }
                 </div>
             </header>
+
             <footer>
-                {props.redoBtnVis[0] && !props.collectionStart &&
+                {false &&
+                    props.redoBtnVis[0] && !props.collectionStart &&
                     <button onClick={() => redoCheckIn(props.id)}>
                         <RedoIcon className='icon redo' style={{ transform: 'scale(-1, 1)' }} />
-                    </button>}
-                {props.redoBtnVis[1] &&
+                    </button>
+                }
+                {false &&
+                    props.redoBtnVis[1] &&
                     <button onClick={() => redoStartLoading(props.id)}>
                         <RedoIcon className='icon redo' style={{ transform: 'scale(-1, 1)' }} />
-                    </button>}
-                {props.redoBtnVis[2] && !props.collectionOut &&
+                    </button>
+                }
+                {false &&
+                    props.redoBtnVis[2] && !props.collectionOut &&
                     <button onClick={() => redoFinishLoadnig(props.id)}>
                         <RedoIcon className='icon redo' style={{ transform: 'scale(-1, 1)' }} />
-                    </button>}
-                {!false && props.redoBtnVis[3] && props.collectionOut &&
+                    </button>
+                }
+                {false &&
+                    props.redoBtnVis[3] && props.collectionOut &&
                     <button onClick={() => redoCheckOut(props.id)}>
                         <RedoIcon className='icon redo' style={{ transform: 'scale(-1, 1)' }} />
-                    </button>}
-
-
+                    </button>
+                }
 
                 {props.fwBtnVis[0] &&
                     <button type='submit forward' onClick={() => {
                         checkIn(props.id);
                     }}>
-                        <CheckInIcon className='icon forward' />
-                    </button>}
+                        <CheckInIcon className='icon forward' /> IN
+                    </button>
+                }
                 {props.fwBtnVis[1] &&
                     <button onClick={() => startLoading(props.id)}>
                         <StartIcon className='icon forward' />
                     </button>
                 }
                 {props.fwBtnVis[2] &&
-                    <button onClick={() => finishLoadnig(props.id)}>
+                    <button onClick={() => alert('Photo uploader is not available yet!')}>
                         <CameraIcon className='icon forward' />
-                    </button>}
+                    </button>
+                }
                 {props.fwBtnVis[2] &&
                     <button onClick={() => finishLoadnig(props.id)}>
                         <FinishIcon className='icon forward' />
-                    </button>}
+                    </button>
+                }
                 {props.fwBtnVis[3] && props.collectionFinish &&
                     <button onClick={() => checkOut(props.id)}>
-                        <CheckOutIcon className='icon forward' />
-                    </button>}
+                        <CheckOutIcon className='icon forward' /> OUT
+                    </button>
+                }
             </footer>
         </form>
     )
