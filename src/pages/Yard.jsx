@@ -30,7 +30,7 @@ export default function Yard(props) {
 
             <div className='yard container'>
                 {/*props.isLoading && <h1 style={{ color: 'white' }}>Loading...</h1>*/}
-                {!props.isLoading &&
+                {true &&
                     <>
                         {isWaiting &&
                             <div className='waiting col'>

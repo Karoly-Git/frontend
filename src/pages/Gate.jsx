@@ -92,7 +92,7 @@ export default function Gate(props) {
             </nav>
             <div className='weighbridge container'>
                 {/*props.isLoading && <h1 style={{ color: 'white' }}>Loading...</h1>*/}
-                {!props.isLoading &&
+                {true &&
                     <>
                         {isDue &&
                             <div className='due col'>

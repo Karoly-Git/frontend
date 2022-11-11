@@ -45,54 +45,55 @@ export default function Admin(props) {
     return (
         <>
             {/*props.isLoading && <h1 style={{ color: 'white' }}>Loading...</h1>*/}
-            {!props.isLoading && <div className='admin container'>
-                {days.map((day, dayIndex) => {
-                    if (dayIndex === 5 || dayIndex == 6) {
-                        return false
-                    };
-                    return (
-                        <table>
-                            <Table
-                                key={dayIndex}
-                                day={day}
-                                dateOnDay={dates[dayIndex]}
-                            />
-                            {props.collections
-                                .sort(function (a, b) {
-                                    if (a.material.toLowerCase() < b.material.toLowerCase()) {
-                                        return -1;
-                                    }
-                                    if (a.material.toLowerCase() > b.material.toLowerCase()) {
-                                        return 1;
-                                    }
-                                    return 0;
-                                })
-                                .map((lorry, lorryIndex) => {
-                                    return (
-                                        <>
-                                            {
-                                                new Date(lorry.scheduled).toLocaleDateString() === dates[dayIndex] &&
-                                                <tbody key={lorryIndex}>
-                                                    <tr>
-                                                        <td>{lorry.material}</td>
-                                                        <td>{lorry.customer}</td>
-                                                        <td>{lorry.refNum}</td>
-                                                        <td>
-                                                            {lorry.out && 'Done'}
-                                                        </td>
-                                                        {false &&
+            {true &&
+                <div className='admin container'>
+                    {days.map((day, dayIndex) => {
+                        if (dayIndex === 5 || dayIndex == 6) {
+                            return false
+                        };
+                        return (
+                            <table>
+                                <Table
+                                    key={dayIndex}
+                                    day={day}
+                                    dateOnDay={dates[dayIndex]}
+                                />
+                                {props.collections
+                                    .sort(function (a, b) {
+                                        if (a.material.toLowerCase() < b.material.toLowerCase()) {
+                                            return -1;
+                                        }
+                                        if (a.material.toLowerCase() > b.material.toLowerCase()) {
+                                            return 1;
+                                        }
+                                        return 0;
+                                    })
+                                    .map((lorry, lorryIndex) => {
+                                        return (
+                                            <>
+                                                {
+                                                    new Date(lorry.scheduled).toLocaleDateString() === dates[dayIndex] &&
+                                                    <tbody key={lorryIndex}>
+                                                        <tr>
+                                                            <td>{lorry.material}</td>
+                                                            <td>{lorry.customer}</td>
+                                                            <td>{lorry.refNum}</td>
                                                             <td>
-                                                                {lorry.out && new Date(lorry.out).toLocaleDateString()}
-                                                            </td>}
-                                                    </tr>
-                                                </tbody>}
-                                        </>
-                                    )
-                                })}
-                        </table>
-                    )
-                })}
-            </div>
+                                                                {lorry.out && 'Done'}
+                                                            </td>
+                                                            {false &&
+                                                                <td>
+                                                                    {lorry.out && new Date(lorry.out).toLocaleDateString()}
+                                                                </td>}
+                                                        </tr>
+                                                    </tbody>}
+                                            </>
+                                        )
+                                    })}
+                            </table>
+                        )
+                    })}
+                </div>
             }
         </>
     )
